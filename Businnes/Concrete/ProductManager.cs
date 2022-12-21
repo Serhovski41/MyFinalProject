@@ -1,4 +1,5 @@
 ﻿using Businnes.Abstract;
+using Businnes.BusinessAspects.Autofac;
 using Businnes.CCS;
 using Businnes.Constants;
 using Businnes.ValidationRules.FluentValidation;
@@ -29,7 +30,7 @@ namespace Businnes.Concrete
             _categoryService = categoryService;
         }
 
-        //[SecuredOperation("product.add")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
