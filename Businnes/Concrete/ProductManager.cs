@@ -70,7 +70,7 @@ namespace Businnes.Concrete
         }
 
         [CacheAspect]
-        [PerformanceAspect(5)]
+        //[PerformanceAspect(5)]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product> (_productDal.Get(p => p.ProductId == productId));
@@ -130,7 +130,7 @@ namespace Businnes.Concrete
             return new SuccessResult();
         }
 
-        [TransactionScopeAspect]
+        //[TransactionScopeAspect]
         public IResult AddTransactionalTest(Product product)
         {
             Add(product);
