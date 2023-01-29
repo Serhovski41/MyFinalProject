@@ -18,7 +18,6 @@ namespace Core.Utilities.Results
             Success = success;
         }
 
-        [JsonProperty("123")]
         public bool Success { get; }
 
         public string Message { get; }
