@@ -38,6 +38,9 @@ namespace Businnes.Concrete
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
+
+            //Aynı isimde ürün eklenemez.
+            //Eğer mevcut kategoride sayısı 15'i geçtiyse sisteme yeni ürün eklenemez.
             IResult result = BusinessRules.Run(CheckIfProductNameExısts(product.ProductName),
                 CheckIfProductCountOfCategoryCorrect(product.CategoryId),CheckIfCategoryLimitExceded());
 
